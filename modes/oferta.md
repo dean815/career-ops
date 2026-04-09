@@ -53,6 +53,24 @@ Use WebSearch for:
 
 Table with data and cited sources. If no data available, say so instead of making things up.
 
+### Salary Estimation
+
+Produce a single **Salary Estimate** (rounded to the nearest $5,000) representing the most likely base comp Dean would receive if hired. This is NOT just the midpoint of the listed range — use contextual signals:
+
+| Signal | Effect on estimate within range |
+|--------|-------------------------------|
+| Rating >= 4.0 and primary archetype fit | Push toward upper quartile |
+| Rating 3.5-3.9 or secondary archetype | Mid-range |
+| Rating < 3.5 or significant gaps | Push toward lower quartile |
+| Dean overqualified for the role | Mid-to-upper (leverage) |
+| Dean underqualified / stretch role | Lower quartile |
+| NYC/hybrid (Dean's preferred location) | No adjustment |
+| Remote-only (no geo discount risk) | No adjustment |
+| Very wide range (>$80K spread) | Weight toward realistic band for Dean's experience level |
+| No listed salary | Estimate from market data (Levels.fyi, Glassdoor, similar roles at similar companies) |
+
+Write the estimate into the Salary Estimate field in Airtable alongside Salary Low and Salary High.
+
 ## Block E — Customization Plan
 
 | # | Section | Current state | Proposed change | Why |
@@ -190,14 +208,15 @@ Read `score_threshold` from `_profile.md` Airtable config (default: 3.0).
    - Notes → one-line evaluation summary
    - Salary Low → comp range low from Block D (USD, if available)
    - Salary High → comp range high from Block D (USD, if available)
+   - Salary Estimate → contextual single-number estimate (see Salary Estimation below)
    - Remote? → "Remote", "Hybrid", or "On-site"
-   - Latest Date → today's date (YYYY-MM-DD)
+   - Location → primary office city/state (e.g., "New York, NY"). For remote roles, use company HQ or "Remote, US"
 4. **Report:** "Synced to Airtable: {Company} — {Role} (new record)"
 
 #### 3c. Update Existing Role
 
 1. Use `update_records_for_table` on the matched record ID.
-2. Update: Rating, Status (see rules below), Notes, Salary Low, Salary High, Remote?, Latest Date.
+2. Update: Rating, Status (see rules below), Notes, Salary Low, Salary High, Salary Estimate, Remote?, Location.
 3. Do NOT overwrite Link (URL should not change).
 4. **Report:** "Synced to Airtable: {Company} — {Role} (updated existing)"
 
