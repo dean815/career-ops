@@ -185,7 +185,7 @@ Read `score_threshold` from `_profile.md` Airtable config (default: 3.0).
    - Company → linked record ID from step 1/2
    - Role → role title from JD
    - Link → JD URL
-   - Rating → score rounded to nearest integer (1-5)
+   - Rating → score as decimal with one decimal place (e.g., 4.3, not rounded to integer)
    - Status → "Evaluated"
    - Notes → one-line evaluation summary
    - Salary Low → comp range low from Block D (USD, if available)
