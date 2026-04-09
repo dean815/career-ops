@@ -27,7 +27,7 @@ For each record, extract:
 
 ### 2. Filter Against Pipeline
 
-Read `data/pipeline.md`. Extract all URLs from both Pendientes and Procesadas sections.
+Read `data/pipeline.md`. Extract all URLs from both Pending and Processed sections.
 
 For each Airtable role:
 - If the URL already appears in `pipeline.md` → skip (already tracked)
@@ -35,7 +35,7 @@ For each Airtable role:
 
 ### 3. Add to Pipeline
 
-Append matching roles to the `## Pendientes` section of `data/pipeline.md`:
+Append matching roles to the `## Pending` section of `data/pipeline.md`:
 
 ```
 - [ ] {url} | {company} | {role}
