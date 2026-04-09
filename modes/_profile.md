@@ -52,6 +52,26 @@ Use the candidate's exit story from `config/profile.yml` to frame ALL content:
 - **In STAR stories:** Reference proof points from article-digest.md
 - **In Draft Answers:** The transition narrative appears in the first response
 
+## Your Preferred Companies
+
+Dean strongly values companies that meet ALL of the following:
+- **NYC hybrid presence** (not fully remote, not SF-only)
+- **Strong product** with real traction
+- **Industry accolades** (Crain's, Built In, LinkedIn Best Of, etc.)
+- **High Glassdoor ratings** (4.0+)
+- **Valued startup/growth stage** (not mega-corp, not pre-seed)
+
+**Tier 1 -- Dream companies (auto +0.3 to Cultural signals score):**
+- Anthropic
+- Airtable
+- Notion
+- Hex
+
+**Tier 2 -- Strong signal companies (auto +0.2 to Cultural signals score):**
+Companies matching 4+ of the criteria above. Identify during evaluation and flag.
+
+**How to apply:** When scoring Block D (Cultural signals), add the tier bonus. In the report, note "Preferred company tier X" in the Role Summary. This ensures these companies surface higher in rankings even when the role archetype is secondary.
+
 ## Your Cross-cutting Advantage
 
 <!-- What's your "signature move"? What do you do that others can't? -->
