@@ -155,3 +155,61 @@ Guardar evaluación completa en `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 ```markdown
 | # | Fecha | Empresa | Rol | Score | Estado | PDF | Report |
 ```
+
+### 3. Sync to Airtable
+
+If `modes/_profile.md` contains a `## Your Airtable Sync` section, run the sync gate:
+
+#### 3a. Sync Gate Check
+
+Read `score_threshold` from `_profile.md` Airtable config (default: 3.0).
+
+| Condition | Action |
+|---|---|
+| Score >= threshold AND role NOT in Airtable | **Create** Role + Company (Step 3b) |
+| Score >= threshold AND role already in Airtable | **Update** Role fields (Step 3c) |
+| Score < threshold AND role already in Airtable | **Set Status to SKIP**, update Latest Date only |
+| Score < threshold AND role NOT in Airtable | **Skip sync entirely** |
+
+**Re-evaluation trigger:** If the user responds to an evaluation and the score changes, re-run this gate. A role bumped above threshold gets created/updated. A role dropped below threshold gets marked SKIP.
+
+**Matching logic:** To find if a role exists in Airtable:
+1. Use `list_records_for_table` with a filter on `Link` field matching the JD URL.
+2. If no match, try filtering Companies table by name, then check linked Roles for matching title.
+
+#### 3b. Create New Role
+
+1. **Look up company** in Companies table by name using `search_records` or `list_records_for_table` with filter.
+2. If not found, **create company** using `create_records_for_table` with just the Company name field.
+3. **Create Roles record** using `create_records_for_table`:
+   - Company → linked record ID from step 1/2
+   - Role → role title from JD
+   - Link → JD URL
+   - Rating → score rounded to nearest integer (1-5)
+   - Status → "Evaluated"
+   - Notes → one-line evaluation summary
+   - Salary Low → comp range low from Block D (USD, if available)
+   - Salary High → comp range high from Block D (USD, if available)
+   - Remote? → "Remote", "Hybrid", or "On-site"
+   - Latest Date → today's date (YYYY-MM-DD)
+4. **Report:** "Synced to Airtable: {Company} — {Role} (new record)"
+
+#### 3c. Update Existing Role
+
+1. Use `update_records_for_table` on the matched record ID.
+2. Update: Rating, Status (see rules below), Notes, Salary Low, Salary High, Remote?, Latest Date.
+3. Do NOT overwrite Link (URL should not change).
+4. **Report:** "Synced to Airtable: {Company} — {Role} (updated existing)"
+
+**Status write-back rules:**
+- On new evaluation of a role with blank or "New Listing" status → set to "Evaluated"
+- On new evaluation of a role with any other status (Applied, Interview, etc.) → preserve existing status
+- On explicit status change in career-ops → map using `airtable_value` from `templates/states.yml`
+
+#### 3d. Error Handling
+
+If Airtable MCP is unavailable (tools not loaded, auth error, timeout):
+- Log: "⚠️ Airtable sync skipped — MCP unavailable. Evaluation saved locally."
+- Do NOT block the evaluation. Local report and tracker are the source of truth.
+
+Use field IDs from `_profile.md` Airtable config for all API calls.

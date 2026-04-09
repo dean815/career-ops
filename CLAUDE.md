@@ -217,6 +217,7 @@ Default modes are in `modes/` (English). Additional language-specific modes are 
 | Searches for new offers | `scan` |
 | Processes pending URLs | `pipeline` |
 | Batch processes offers | `batch` |
+| Imports roles from Airtable | `import` |
 | Asks about rejection patterns or wants to improve targeting | `patterns` |
 
 ### CV Source of Truth
@@ -290,6 +291,7 @@ Write one TSV file per evaluation to `batch/tracker-additions/{num}-{company-slu
 5. Health check: `node verify-pipeline.mjs`
 6. Normalize statuses: `node normalize-statuses.mjs`
 7. Dedup: `node dedup-tracker.mjs`
+8. **Airtable sync:** After every evaluation, sync to Airtable per `modes/_profile.md` Airtable config (if present). See `modes/oferta.md` step 3.
 
 ### Canonical States (applications.md)
 
