@@ -33,20 +33,30 @@ Read `portals.yml` which contains:
 
 **Each company MUST have `careers_url` in portals.yml.** If missing, search for it once, save it, and use in future scans.
 
-### Level 2 — Greenhouse API (COMPLEMENTARY)
+### Level 2 — Job Board APIs (PREFERRED when available)
 
-For companies with Greenhouse, the JSON API (`boards-api.greenhouse.io/v1/boards/{slug}/jobs`) returns clean structured data. Use as a quick complement to Level 1 — faster than Playwright but only works with Greenhouse.
+Companies with an `api` field in portals.yml use structured JSON endpoints — faster, cheaper, and more reliable than Playwright. The script `scan-api.mjs` handles all API scanning deterministically.
+
+**Supported providers** (auto-detected from URL domain):
+
+| Provider | URL pattern | Jobs array | Title | URL | Location |
+|----------|------------|------------|-------|-----|----------|
+| Greenhouse | `boards-api.greenhouse.io` | `jobs[]` | `.title` | `.absolute_url` | `.location.name` |
+| Ashby | `api.ashbyhq.com` | `jobs[]` | `.title` | `.jobUrl` | `.location` |
+| Lever | `api.lever.co` | top-level `[]` | `.text` | `.hostedUrl` | `.categories.location` |
+
+**Truncation detection:** If the API response has a suspiciously round job count (100/250/500/1000), pagination tokens (`has_more`, `next`, `nextPageToken`), or the company's `notes` warn about truncation — the company is flagged for Playwright/websearch fallback.
 
 ### Level 3 — WebSearch queries (BROAD DISCOVERY)
 
 The `search_queries` with `site:` filters cover portals broadly (all Ashby, all Greenhouse, etc.). Useful for discovering NEW companies not yet in `tracked_companies`, but results may be stale.
 
 **Execution priority:**
-1. Level 1: Playwright → all `tracked_companies` with `careers_url`
-2. Level 2: API → all `tracked_companies` with `api:`
+1. Level 2: API → `node scan-api.mjs` (fast, structured, cheap)
+2. Level 1: Playwright → companies WITHOUT `api`, plus API failures/truncations
 3. Level 3: WebSearch → all `search_queries` with `enabled: true`
 
-Levels are additive — all are executed, results are combined and deduplicated.
+API is attempted first for companies that have it. Playwright/websearch is the fallback.
 
 ## Workflow
 
@@ -54,8 +64,17 @@ Levels are additive — all are executed, results are combined and deduplicated.
 2. **Read history**: `data/scan-history.tsv` → URLs already seen
 3. **Read dedup sources**: `data/applications.md` + `data/pipeline.md`
 
-4. **Level 1 — Playwright scan** (parallel in batches of 3-5):
-   For each company in `tracked_companies` with `enabled: true` and `careers_url` defined:
+4. **Level 2 — Job Board APIs** (run FIRST):
+   Run `node scan-api.mjs` via Bash. Parse the JSON output.
+   - `companies[].matchingJobs` → add to candidate list
+   - `truncatedCompanies` → flag for Playwright fallback
+   - `errors` → flag for Playwright fallback
+   Companies with successful API results skip Playwright.
+
+5. **Level 1 — Playwright scan** (parallel in batches of 3-5):
+   For each company in `tracked_companies` with `enabled: true` that:
+   - Does NOT have an `api` field, OR
+   - Was in `truncatedCompanies` or `errors` from Level 2
    a. `browser_navigate` to the `careers_url`
    b. `browser_snapshot` to read all job listings
    c. If the page has filters/departments, navigate the relevant sections
@@ -63,12 +82,6 @@ Levels are additive — all are executed, results are combined and deduplicated.
    e. If the page paginates results, navigate additional pages
    f. Accumulate in candidate list
    g. If `careers_url` fails (404, redirect), try `scan_query` as fallback and note for URL update
-
-5. **Level 2 — Greenhouse APIs** (parallel):
-   For each company in `tracked_companies` with `api:` defined and `enabled: true`:
-   a. WebFetch the API URL → JSON with job list
-   b. For each job extract: `{title, url, company}`
-   c. Accumulate in candidate list (dedup with Level 1)
 
 6. **Level 3 — WebSearch queries** (parallel if possible):
    For each query in `search_queries` with `enabled: true`:
