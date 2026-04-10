@@ -340,6 +340,7 @@ tracked_companies:
 
   - name: ElevenLabs
     careers_url: https://jobs.ashbyhq.com/elevenlabs
+    api: https://api.ashbyhq.com/posting-api/job-board/elevenlabs
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/elevenlabs'
     notes: "Voice AI TTS leader."
@@ -347,6 +348,7 @@ tracked_companies:
 
   - name: Deepgram
     careers_url: https://jobs.ashbyhq.com/deepgram
+    api: https://api.ashbyhq.com/posting-api/job-board/deepgram
     scan_method: websearch
     scan_query: 'site:deepgram.com/careers OR "deepgram" "Solutions" OR "AI Engineer" site:jobs.ashbyhq.com'
     notes: "STT/TTS APIs."
@@ -354,6 +356,7 @@ tracked_companies:
 
   - name: Vapi
     careers_url: https://jobs.ashbyhq.com/vapi
+    api: https://api.ashbyhq.com/posting-api/job-board/vapi
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/vapi'
     notes: "Voice AI infrastructure."
@@ -361,6 +364,7 @@ tracked_companies:
 
   - name: Bland AI
     careers_url: https://jobs.ashbyhq.com/bland
+    api: https://api.ashbyhq.com/posting-api/job-board/bland
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/bland'
     notes: "Voice phone agents. $65M Series B."
@@ -429,6 +433,7 @@ tracked_companies:
 
   - name: Sierra
     careers_url: https://jobs.ashbyhq.com/sierra
+    api: https://api.ashbyhq.com/posting-api/job-board/sierra
     scan_method: websearch
     scan_query: '"sierra.ai" "AI" "Forward Deployed" OR "Applied" OR "Solutions" site:jobs.ashbyhq.com'
     notes: "Bret Taylor (ex-CEO Salesforce). AI customer agents."
@@ -436,6 +441,7 @@ tracked_companies:
 
   - name: Decagon
     careers_url: https://jobs.ashbyhq.com/decagon
+    api: https://api.ashbyhq.com/posting-api/job-board/decagon
     scan_method: websearch
     scan_query: '"decagon" "AI" "Forward Deployed" OR "Solutions" site:jobs.ashbyhq.com'
     notes: "AI customer support agents."
@@ -496,6 +502,7 @@ tracked_companies:
 
   - name: Lindy
     careers_url: https://jobs.ashbyhq.com/lindy
+    api: https://api.ashbyhq.com/posting-api/job-board/lindy
     scan_method: websearch
     scan_query: '"lindy.ai" "AI" "Forward Deployed" OR "Solutions" site:jobs.ashbyhq.com'
     notes: "AI agent management platform."
@@ -518,6 +525,7 @@ tracked_companies:
 
   - name: n8n
     careers_url: https://jobs.ashbyhq.com/n8n
+    api: https://api.ashbyhq.com/posting-api/job-board/n8n
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/n8n'
     notes: "Berlin + remote EU/US. Workflow automation."
@@ -525,6 +533,7 @@ tracked_companies:
 
   - name: Zapier
     careers_url: https://jobs.ashbyhq.com/zapier
+    api: https://api.ashbyhq.com/posting-api/job-board/zapier
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/zapier'
     notes: "Remote-first. Automation platform leader."
@@ -541,16 +550,19 @@ tracked_companies:
 
   - name: Cohere
     careers_url: https://jobs.ashbyhq.com/cohere
+    api: https://api.ashbyhq.com/posting-api/job-board/cohere
     notes: "AI/LLM provider. Toronto + remote."
     enabled: true
 
   - name: LangChain
     careers_url: https://jobs.ashbyhq.com/langchain
+    api: https://api.ashbyhq.com/posting-api/job-board/langchain
     notes: "LangChain/LangSmith framework."
     enabled: true
 
   - name: Pinecone
     careers_url: https://jobs.ashbyhq.com/pinecone
+    api: https://api.ashbyhq.com/posting-api/job-board/pinecone
     notes: "Vector database."
     enabled: true
 
@@ -558,16 +570,19 @@ tracked_companies:
 
   - name: Mistral AI
     careers_url: https://jobs.lever.co/mistral
+    api: https://api.lever.co/v0/postings/mistral?mode=json
     notes: "Paris. European AI lab."
     enabled: true
 
   - name: Weights & Biases
     careers_url: https://jobs.lever.co/wandb
+    api: https://api.lever.co/v0/postings/wandb?mode=json
     notes: "MLOps platform."
     enabled: true
 
   - name: Palantir
     careers_url: https://jobs.lever.co/palantir
+    api: https://api.lever.co/v0/postings/palantir?mode=json
     notes: "FDE roles. Mostly US/London."
     enabled: true
 
@@ -582,6 +597,7 @@ tracked_companies:
 
   - name: Attio
     careers_url: https://jobs.ashbyhq.com/attio
+    api: https://api.ashbyhq.com/posting-api/job-board/attio
     scan_method: websearch
     scan_query: 'site:attio.com/careers OR site:jobs.ashbyhq.com/attio'
     notes: "Remote EU. AI-native CRM. Series B $52M."
@@ -589,6 +605,7 @@ tracked_companies:
 
   - name: Tinybird
     careers_url: https://jobs.ashbyhq.com/tinybird
+    api: https://api.ashbyhq.com/posting-api/job-board/tinybird
     scan_method: websearch
     scan_query: 'site:tinybird.co/careers OR site:jobs.ashbyhq.com/tinybird'
     notes: "Remote. Real-time data platform."
@@ -596,6 +613,7 @@ tracked_companies:
 
   - name: Clarity AI
     careers_url: https://jobs.lever.co/clarity-ai
+    api: https://api.lever.co/v0/postings/clarity-ai?mode=json
     scan_method: websearch
     scan_query: 'site:clarity.ai/careers OR site:jobs.lever.co/clarity-ai'
     notes: "Madrid/Remote. Sustainability analytics with AI."
@@ -603,6 +621,7 @@ tracked_companies:
 
   - name: Travelperk
     careers_url: https://jobs.ashbyhq.com/travelperk
+    api: https://api.ashbyhq.com/posting-api/job-board/Perk
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/travelperk'
     notes: "Barcelona. Business travel unicorn."
@@ -618,6 +637,7 @@ tracked_companies:
 
   - name: Aleph Alpha
     careers_url: https://jobs.ashbyhq.com/AlephAlpha
+    api: https://api.ashbyhq.com/posting-api/job-board/AlephAlpha
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/AlephAlpha'
     notes: "Heidelberg DE. Sovereign European LLM provider, enterprise & government focus."
@@ -625,6 +645,7 @@ tracked_companies:
 
   - name: DeepL
     careers_url: https://jobs.ashbyhq.com/DeepL
+    api: https://api.ashbyhq.com/posting-api/job-board/DeepL
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/DeepL'
     notes: "Cologne DE. Translation & language AI. 60+ open roles, EU/DACH heavy."
@@ -690,6 +711,7 @@ tracked_companies:
 
   - name: Qonto
     careers_url: https://jobs.lever.co/qonto
+    api: https://api.lever.co/v0/postings/qonto?mode=json
     notes: "Paris / Berlin / Barcelona / Milan. SMB neobank, MLOps for AI Product roles."
     enabled: true
 
@@ -697,6 +719,7 @@ tracked_companies:
 
   - name: Forto
     careers_url: https://jobs.lever.co/forto
+    api: https://api.lever.co/v0/postings/forto?mode=json
     notes: "Berlin DE. Digital freight forwarder, product & data roles, German + English."
     enabled: true
 
@@ -704,6 +727,7 @@ tracked_companies:
 
   - name: Lakera
     careers_url: https://jobs.ashbyhq.com/lakera.ai
+    api: https://api.ashbyhq.com/posting-api/job-board/lakera.ai
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/lakera.ai'
     notes: "Zurich CH / SF. AI security & guardrails. Has Forward Deployed Engineer roles."
@@ -717,6 +741,7 @@ tracked_companies:
 
   - name: Cradle
     careers_url: https://jobs.ashbyhq.com/cradlebio
+    api: https://api.ashbyhq.com/posting-api/job-board/cradlebio
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/cradlebio'
     notes: "Zurich CH / Amsterdam. AI-guided protein design, ML researcher roles."
@@ -733,6 +758,7 @@ tracked_companies:
 
   - name: Photoroom
     careers_url: https://jobs.ashbyhq.com/photoroom
+    api: https://api.ashbyhq.com/posting-api/job-board/photoroom
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/photoroom'
     notes: "Paris FR. AI photo editor, Head of CV / Head of ML roles."
@@ -740,6 +766,7 @@ tracked_companies:
 
   - name: Pigment
     careers_url: https://jobs.lever.co/pigment
+    api: https://api.lever.co/v0/postings/pigment?mode=json
     notes: "Paris FR / NYC / London. AI-powered FP&A planning platform."
     enabled: true
 
@@ -771,6 +798,7 @@ tracked_companies:
 
   - name: Synthesia
     careers_url: https://jobs.ashbyhq.com/synthesia
+    api: https://api.ashbyhq.com/posting-api/job-board/synthesia
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/synthesia OR site:job-boards.greenhouse.io/synthesia'
     notes: "London UK. AI video generation for enterprise, $4B valuation."
@@ -778,6 +806,7 @@ tracked_companies:
 
   - name: Faculty
     careers_url: https://jobs.ashbyhq.com/faculty
+    api: https://api.ashbyhq.com/posting-api/job-board/faculty
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/faculty'
     notes: "London UK. Applied AI consultancy. 80+ roles, AI Safety / MLE / Delivery."
@@ -785,6 +814,7 @@ tracked_companies:
 
   - name: Causaly
     careers_url: https://jobs.ashbyhq.com/causaly
+    api: https://api.ashbyhq.com/posting-api/job-board/causaly
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/causaly'
     notes: "London / Athens. Biomedical knowledge graph + AI."
@@ -794,6 +824,7 @@ tracked_companies:
 
   - name: Lovable
     careers_url: https://jobs.ashbyhq.com/lovable
+    api: https://api.ashbyhq.com/posting-api/job-board/lovable
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/lovable'
     notes: "Stockholm SE. AI app builder (text-to-app), 80+ open roles."
@@ -801,6 +832,7 @@ tracked_companies:
 
   - name: Legora
     careers_url: https://jobs.ashbyhq.com/legora
+    api: https://api.ashbyhq.com/posting-api/job-board/legora
     scan_method: websearch
     scan_query: 'site:jobs.ashbyhq.com/legora'
     notes: "Stockholm SE / NYC / London. AI-native legal workspace."
@@ -808,11 +840,13 @@ tracked_companies:
 
   - name: Spotify
     careers_url: https://jobs.lever.co/spotify
+    api: https://api.lever.co/v0/postings/spotify?mode=json
     notes: "Stockholm SE / NYC / London. Audio platform, large ML/personalization org."
     enabled: true
 
   - name: Vinted
     careers_url: https://jobs.lever.co/vinted
+    api: https://api.lever.co/v0/postings/vinted?mode=json
     notes: "Vilnius LT / Berlin. C2C marketplace unicorn, data science & ML roles."
     enabled: true
 
@@ -828,6 +862,7 @@ tracked_companies:
 
   - name: Perplexity
     careers_url: https://jobs.ashbyhq.com/perplexity
+    api: https://api.ashbyhq.com/posting-api/job-board/perplexity
     scan_method: websearch
     scan_query: ‘site:jobs.ashbyhq.com/perplexity "AI" OR "Applied AI" OR "Forward Deployed" OR "Engineer"’
     notes: "AI-native search and enterprise AI platform."
