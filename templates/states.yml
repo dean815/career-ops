@@ -7,50 +7,128 @@
 # no dates, no extra text. Dates go in the date column.
 
 states:
+  - id: new_listing
+    label: New Listing
+    aliases: [new]
+    description: Found or imported, not yet evaluated
+    dashboard_group: evaluated
+    airtable_value: New Listing
+
   - id: evaluated
     label: Evaluated
     aliases: [evaluada]
     description: Offer evaluated with report, pending decision
     dashboard_group: evaluated
+    airtable_value: Evaluated
 
   - id: applied
     label: Applied
     aliases: [aplicado, enviada, aplicada, sent]
     description: Application submitted
     dashboard_group: applied
+    airtable_value: Applied
 
   - id: responded
     label: Responded
     aliases: [respondido]
     description: Company has responded (not yet interview)
     dashboard_group: responded
+    airtable_value: Company Responded
+
+  - id: followed_up
+    label: Followed Up
+    aliases: [follow-up, followup]
+    description: Candidate followed up with company
+    dashboard_group: applied
+    airtable_value: Dean Followed Up
+
+  - id: phone_screen
+    label: Phone Screen
+    aliases: [phone, screen]
+    description: Phone screen scheduled or completed
+    dashboard_group: interview
+    airtable_value: Phone Screen
 
   - id: interview
     label: Interview
     aliases: [entrevista]
     description: Active interview process
     dashboard_group: interview
+    airtable_value: Interview
+
+  - id: onsite_interview
+    label: On-Site Interview
+    aliases: [onsite, on-site]
+    description: On-site interview stage
+    dashboard_group: interview
+    airtable_value: On-Site Interview
+
+  - id: assignment
+    label: Assignment
+    aliases: [take-home, homework]
+    description: Take-home or assessment assigned
+    dashboard_group: interview
+    airtable_value: Assignment
+
+  - id: assessment_submitted
+    label: Assessment Submitted
+    aliases: [submitted]
+    description: Assessment turned in
+    dashboard_group: interview
+    airtable_value: Assessment Submitted
+
+  - id: informal_chat
+    label: Informal Chat
+    aliases: [chat, coffee]
+    description: Informal or networking conversation
+    dashboard_group: interview
+    airtable_value: Informal Chat
 
   - id: offer
     label: Offer
     aliases: [oferta]
     description: Offer received
     dashboard_group: offer
+    airtable_value: Offer
+
+  - id: accepted
+    label: Accepted
+    aliases: [accept]
+    description: Offer accepted
+    dashboard_group: offer
+    airtable_value: Accepted
 
   - id: rejected
     label: Rejected
     aliases: [rechazado, rechazada]
     description: Rejected by company
     dashboard_group: rejected
+    airtable_value: Rejected
+
+  - id: declined
+    label: Declined
+    aliases: [decline, passed]
+    description: Candidate declined the offer
+    dashboard_group: discarded
+    airtable_value: Declined
+
+  - id: expired
+    label: Expired
+    aliases: [closed]
+    description: Posting expired or was closed
+    dashboard_group: discarded
+    airtable_value: Expired
 
   - id: discarded
     label: Discarded
     aliases: [descartado, descartada, cerrada, cancelada]
     description: Discarded by candidate or offer closed
     dashboard_group: discarded
+    airtable_value: Expired
 
   - id: skip
     label: SKIP
-    aliases: [no_aplicar, no aplicar, skip, monitor]
+    aliases: [no_aplicar, no aplicar, monitor]
     description: Doesn't fit, don't apply
     dashboard_group: skip
+    airtable_value: SKIP

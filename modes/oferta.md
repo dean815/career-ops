@@ -1,89 +1,113 @@
+<<<<<<< remote-updates
 # Modo: oferta — Evaluación Completa A-G
 
 Cuando el candidato pega una oferta (texto o URL), entregar SIEMPRE los 7 bloques (A-F evaluation + G legitimacy):
+=======
+# Mode: oferta — Complete A-F Evaluation
 
-## Paso 0 — Detección de Arquetipo
+When the candidate pastes an offer (text or URL), ALWAYS deliver all 6 blocks:
+>>>>>>> main
 
-Clasificar la oferta en uno de los 6 arquetipos (ver `_shared.md`). Si es híbrido, indicar los 2 más cercanos. Esto determina:
-- Qué proof points priorizar en bloque B
-- Cómo reescribir el summary en bloque E
-- Qué historias STAR preparar en bloque F
+## Step 0 — Archetype Detection
 
-## Bloque A — Resumen del Rol
+Classify the offer into one of the 6 archetypes (see `_shared.md`). If hybrid, indicate the 2 closest. This determines:
+- Which proof points to prioritize in block B
+- How to rewrite the summary in block E
+- Which STAR stories to prepare in block F
 
-Tabla con:
-- Arquetipo detectado
+## Block A — Role Summary
+
+Table with:
+- Detected archetype
 - Domain (platform/agentic/LLMOps/ML/enterprise)
 - Function (build/consult/manage/deploy)
 - Seniority
 - Remote (full/hybrid/onsite)
-- Team size (si se menciona)
-- TL;DR en 1 frase
+- Team size (if mentioned)
+- TL;DR in 1 sentence
 
-## Bloque B — Match con CV
+## Block B — CV Match
 
-Lee `cv.md`. Crea tabla con cada requisito del JD mapeado a líneas exactas del CV.
+Read `cv.md`. Create table with each JD requirement mapped to exact CV lines.
 
-**Adaptado al arquetipo:**
-- Si FDE → priorizar proof points de delivery rápida y client-facing
-- Si SA → priorizar diseño de sistemas e integrations
-- Si PM → priorizar product discovery y métricas
-- Si LLMOps → priorizar evals, observability, pipelines
-- Si Agentic → priorizar multi-agent, HITL, orchestration
-- Si Transformation → priorizar change management, adoption, scaling
+**Adapted to archetype:**
+- If FDE → prioritize fast delivery and client-facing proof points
+- If SA → prioritize systems design and integrations
+- If PM → prioritize product discovery and metrics
+- If LLMOps → prioritize evals, observability, pipelines
+- If Agentic → prioritize multi-agent, HITL, orchestration
+- If Transformation → prioritize change management, adoption, scaling
 
-Sección de **gaps** con estrategia de mitigación para cada uno. Para cada gap:
-1. ¿Es un hard blocker o un nice-to-have?
-2. ¿Puede el candidato demostrar experiencia adyacente?
-3. ¿Hay un proyecto portfolio que cubra este gap?
-4. Plan de mitigación concreto (frase para cover letter, proyecto rápido, etc.)
+**Gaps** section with mitigation strategy for each one. For each gap:
+1. Is it a hard blocker or a nice-to-have?
+2. Can the candidate demonstrate adjacent experience?
+3. Is there a portfolio project that covers this gap?
+4. Concrete mitigation plan (phrase for cover letter, quick project, etc.)
 
-## Bloque C — Nivel y Estrategia
+## Block C — Level and Strategy
 
-1. **Nivel detectado** en el JD vs **nivel natural del candidato para ese arquetipo**
-2. **Plan "vender senior sin mentir"**: frases específicas adaptadas al arquetipo, logros concretos a destacar, cómo posicionar la experiencia de founder como ventaja
-3. **Plan "si me downlevelan"**: aceptar si comp es justa, negociar review a 6 meses, criterios de promoción claros
+1. **Detected level** in the JD vs **candidate's natural level for that archetype**
+2. **"Sell senior without lying" plan**: specific phrases adapted to the archetype, concrete achievements to highlight, how to position founder experience as an advantage
+3. **"If I get downleveled" plan**: accept if comp is fair, negotiate 6-month review, clear promotion criteria
 
-## Bloque D — Comp y Demanda
+## Block D — Comp and Demand
 
-Usar WebSearch para:
-- Salarios actuales del rol (Glassdoor, Levels.fyi, Blind)
-- Reputación de compensación de la empresa
-- Tendencia de demanda del rol
+Use WebSearch for:
+- Current salaries for the role (Glassdoor, Levels.fyi, Blind)
+- Company compensation reputation
+- Role demand trend
 
-Tabla con datos y fuentes citadas. Si no hay datos, decirlo en vez de inventar.
+Table with data and cited sources. If no data available, say so instead of making things up.
 
-## Bloque E — Plan de Personalización
+### Salary Estimation
 
-| # | Sección | Estado actual | Cambio propuesto | Por qué |
-|---|---------|---------------|------------------|---------|
+Produce a single **Salary Estimate** (rounded to the nearest $5,000) representing the most likely base comp Dean would receive if hired. This is NOT just the midpoint of the listed range — use contextual signals:
+
+| Signal | Effect on estimate within range |
+|--------|-------------------------------|
+| Rating >= 4.0 and primary archetype fit | Push toward upper quartile |
+| Rating 3.5-3.9 or secondary archetype | Mid-range |
+| Rating < 3.5 or significant gaps | Push toward lower quartile |
+| Dean overqualified for the role | Mid-to-upper (leverage) |
+| Dean underqualified / stretch role | Lower quartile |
+| NYC/hybrid (Dean's preferred location) | No adjustment |
+| Remote-only (no geo discount risk) | No adjustment |
+| Very wide range (>$80K spread) | Weight toward realistic band for Dean's experience level |
+| No listed salary | Estimate from market data (Levels.fyi, Glassdoor, similar roles at similar companies) |
+
+Write the estimate into the Salary Estimate field in Airtable alongside Salary Low and Salary High.
+
+## Block E — Customization Plan
+
+| # | Section | Current state | Proposed change | Why |
+|---|---------|---------------|-----------------|-----|
 | 1 | Summary | ... | ... | ... |
 | ... | ... | ... | ... | ... |
 
-Top 5 cambios al CV + Top 5 cambios a LinkedIn para maximizar match.
+Top 5 CV changes + Top 5 LinkedIn changes to maximize match.
 
-## Bloque F — Plan de Entrevistas
+## Block F — Interview Plan
 
-6-10 historias STAR+R mapeadas a requisitos del JD (STAR + **Reflection**):
+6-10 STAR+R stories mapped to JD requirements (STAR + **Reflection**):
 
-| # | Requisito del JD | Historia STAR+R | S | T | A | R | Reflection |
-|---|-----------------|-----------------|---|---|---|---|------------|
+| # | JD Requirement | STAR+R Story | S | T | A | R | Reflection |
+|---|----------------|--------------|---|---|---|---|------------|
 
 The **Reflection** column captures what was learned or what would be done differently. This signals seniority — junior candidates describe what happened, senior candidates extract lessons.
 
 **Story Bank:** If `interview-prep/story-bank.md` exists, check if any of these stories are already there. If not, append new ones. Over time this builds a reusable bank of 5-10 master stories that can be adapted to any interview question.
 
-**Seleccionadas y enmarcadas según el arquetipo:**
-- FDE → enfatizar velocidad de entrega y client-facing
-- SA → enfatizar decisiones de arquitectura
-- PM → enfatizar discovery y trade-offs
-- LLMOps → enfatizar métricas, evals, production hardening
-- Agentic → enfatizar orchestration, error handling, HITL
-- Transformation → enfatizar adopción, cambio organizacional
+**Selected and framed by archetype:**
+- FDE → emphasize delivery speed and client-facing
+- SA → emphasize architecture decisions
+- PM → emphasize discovery and trade-offs
+- LLMOps → emphasize metrics, evals, production hardening
+- Agentic → emphasize orchestration, error handling, HITL
+- Transformation → emphasize adoption, organizational change
 
-Incluir también:
-- 1 case study recomendado (cuál de sus proyectos presentar y cómo)
-- Preguntas red-flag y cómo responderlas (ej: "¿por qué vendiste tu empresa?", "¿tienes equipo de reports?")
+Also include:
+- 1 recommended case study (which project to present and how)
+- Red-flag questions and how to answer them (e.g., "why did you sell your company?", "do you have direct reports?")
 
 ## Bloque G — Posting Legitimacy
 
@@ -142,75 +166,147 @@ Analyze the job posting for signals that indicate whether this is a real, active
 
 ---
 
-## Post-evaluación
+## Post-evaluation
 
+<<<<<<< remote-updates
 **SIEMPRE** después de generar los bloques A-G:
+=======
+**ALWAYS** after generating blocks A-F:
+>>>>>>> main
 
-### 1. Guardar report .md
+### 1. Save report .md
 
-Guardar evaluación completa en `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
+Save the complete evaluation in `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 
-- `{###}` = siguiente número secuencial (3 dígitos, zero-padded)
-- `{company-slug}` = nombre de empresa en lowercase, sin espacios (usar guiones)
-- `{YYYY-MM-DD}` = fecha actual
+- `{###}` = next sequential number (3 digits, zero-padded)
+- `{company-slug}` = company name in lowercase, no spaces (use hyphens)
+- `{YYYY-MM-DD}` = current date
 
-**Formato del report:**
+**Report format:**
 
 ```markdown
-# Evaluación: {Empresa} — {Rol}
+# Evaluation: {Company} — {Role}
 
-**Fecha:** {YYYY-MM-DD}
-**Arquetipo:** {detectado}
+**Date:** {YYYY-MM-DD}
+**Archetype:** {detected}
 **Score:** {X/5}
+<<<<<<< remote-updates
 **Legitimacy:** {High Confidence | Proceed with Caution | Suspicious}
 **PDF:** {ruta o pendiente}
+=======
+**PDF:** {path or pending}
+>>>>>>> main
 
 ---
 
-## A) Resumen del Rol
-(contenido completo del bloque A)
+## A) Role Summary
+(complete block A content)
 
-## B) Match con CV
-(contenido completo del bloque B)
+## B) CV Match
+(complete block B content)
 
-## C) Nivel y Estrategia
-(contenido completo del bloque C)
+## C) Level and Strategy
+(complete block C content)
 
-## D) Comp y Demanda
-(contenido completo del bloque D)
+## D) Comp and Demand
+(complete block D content)
 
-## E) Plan de Personalización
-(contenido completo del bloque E)
+## E) Customization Plan
+(complete block E content)
 
-## F) Plan de Entrevistas
-(contenido completo del bloque F)
+## F) Interview Plan
+(complete block F content)
 
+<<<<<<< remote-updates
 ## G) Posting Legitimacy
 (contenido completo del bloque G)
 
 ## H) Draft Application Answers
 (solo si score >= 4.5 — borradores de respuestas para el formulario de aplicación)
+=======
+## G) Draft Application Answers
+(only if score >= 4.5 — draft answers for the application form)
+>>>>>>> main
 
 ---
 
-## Keywords extraídas
-(lista de 15-20 keywords del JD para ATS optimization)
+## Extracted Keywords
+(list of 15-20 JD keywords for ATS optimization)
 ```
 
-### 2. Registrar en tracker
+### 2. Register in tracker
 
-**SIEMPRE** registrar en `data/applications.md`:
-- Siguiente número secuencial
-- Fecha actual
-- Empresa
-- Rol
-- Score: promedio de match (1-5)
-- Estado: `Evaluada`
-- PDF: ❌ (o ✅ si auto-pipeline generó PDF)
-- Report: link relativo al report .md (ej: `[001](reports/001-company-2026-01-01.md)`)
+**ALWAYS** register in `data/applications.md`:
+- Next sequential number
+- Current date
+- Company
+- Role
+- Score: match average (1-5)
+- Status: `Evaluated`
+- PDF: ❌ (or ✅ if auto-pipeline generated PDF)
+- Report: relative link to the report .md (e.g., `[001](reports/001-company-2026-01-01.md)`)
 
-**Formato del tracker:**
+**Tracker format:**
 
 ```markdown
-| # | Fecha | Empresa | Rol | Score | Estado | PDF | Report |
+| # | Date | Company | Role | Score | Status | PDF | Report |
 ```
+
+### 3. Sync to Airtable
+
+If `modes/_profile.md` contains a `## Your Airtable Sync` section, run the sync gate:
+
+#### 3a. Sync Gate Check
+
+Read `score_threshold` from `_profile.md` Airtable config (default: 3.0).
+
+| Condition | Action |
+|---|---|
+| Score >= threshold AND role NOT in Airtable | **Create** Role + Company (Step 3b) |
+| Score >= threshold AND role already in Airtable | **Update** Role fields (Step 3c) |
+| Score < threshold AND role already in Airtable | **Set Status to SKIP**, update Latest Date only |
+| Score < threshold AND role NOT in Airtable | **Skip sync entirely** |
+
+**Re-evaluation trigger:** If the user responds to an evaluation and the score changes, re-run this gate. A role bumped above threshold gets created/updated. A role dropped below threshold gets marked SKIP.
+
+**Matching logic:** To find if a role exists in Airtable:
+1. Use `list_records_for_table` with a filter on `Link` field matching the JD URL.
+2. If no match, try filtering Companies table by name, then check linked Roles for matching title.
+
+#### 3b. Create New Role
+
+1. **Look up company** in Companies table by name using `search_records` or `list_records_for_table` with filter.
+2. If not found, **create company** using `create_records_for_table` with just the Company name field.
+3. **Create Roles record** using `create_records_for_table`:
+   - Company → linked record ID from step 1/2
+   - Role → role title from JD
+   - Link → JD URL
+   - Rating → score as decimal with one decimal place (e.g., 4.3, not rounded to integer)
+   - Status → "Evaluated"
+   - Notes → one-line evaluation summary
+   - Salary Low → comp range low from Block D (USD, if available)
+   - Salary High → comp range high from Block D (USD, if available)
+   - Salary Estimate → contextual single-number estimate (see Salary Estimation below)
+   - Remote? → "Remote", "Hybrid", or "On-site"
+   - Location → primary office city/state (e.g., "New York, NY"). For remote roles, use company HQ or "Remote, US"
+4. **Report:** "Synced to Airtable: {Company} — {Role} (new record)"
+
+#### 3c. Update Existing Role
+
+1. Use `update_records_for_table` on the matched record ID.
+2. Update: Rating, Status (see rules below), Notes, Salary Low, Salary High, Salary Estimate, Remote?, Location.
+3. Do NOT overwrite Link (URL should not change).
+4. **Report:** "Synced to Airtable: {Company} — {Role} (updated existing)"
+
+**Status write-back rules:**
+- On new evaluation of a role with blank or "New Listing" status → set to "Evaluated"
+- On new evaluation of a role with any other status (Applied, Interview, etc.) → preserve existing status
+- On explicit status change in career-ops → map using `airtable_value` from `templates/states.yml`
+
+#### 3d. Error Handling
+
+If Airtable MCP is unavailable (tools not loaded, auth error, timeout):
+- Log: "⚠️ Airtable sync skipped — MCP unavailable. Evaluation saved locally."
+- Do NOT block the evaluation. Local report and tracker are the source of truth.
+
+Use field IDs from `_profile.md` Airtable config for all API calls.
