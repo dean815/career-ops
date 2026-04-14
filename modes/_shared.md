@@ -25,7 +25,7 @@
 
 ## Scoring System
 
-The evaluation uses 6 blocks (A-F) with a global score of 1-5:
+The evaluation uses 7 blocks (A-G) with a global score of 1-5:
 
 | Dimension | What it measures |
 |-----------|-----------------|

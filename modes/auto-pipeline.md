@@ -16,11 +16,11 @@ If the input is a **URL** (not pasted JD text), follow this strategy to extract 
 
 **If the input is JD text** (not a URL): use directly, no need to fetch.
 
-## Paso 1 — Evaluación A-G
-Ejecutar exactamente igual que el modo `oferta` (leer `modes/oferta.md` para todos los bloques A-F + Block G Posting Legitimacy).
+## Step 1 — A-G Evaluation
+Execute exactly as the `oferta` mode (read `modes/oferta.md` for all blocks A-F + Block G Posting Legitimacy).
 
-## Paso 2 — Guardar Report .md
-Guardar la evaluación completa en `reports/{###}-{company-slug}-{YYYY-MM-DD}.md` (ver formato en `modes/oferta.md`).
+## Step 2 — Save Report .md
+Save the complete evaluation in `reports/{###}-{company-slug}-{YYYY-MM-DD}.md` (see format in `modes/oferta.md`).
 Include Block G in the saved report. Add `**Legitimacy:** {tier}` to the report header.
 
 ## Step 3 — Generate PDF
@@ -30,9 +30,9 @@ Execute the complete `pdf` pipeline (read `modes/pdf.md`).
 
 If the final score is >= 4.5, generate draft answers for the application form:
 
-1. **Extraer preguntas del formulario**: Usar Playwright para navegar al formulario y hacer snapshot. Si no se pueden extraer, usar las preguntas genéricas.
-2. **Generar respuestas** siguiendo el tono (ver abajo).
-3. **Guardar en el report** como sección `## H) Draft Application Answers`.
+1. **Extract form questions**: Use Playwright to navigate to the form and take a snapshot. If questions can't be extracted, use the generic questions below.
+2. **Generate answers** following the tone guidelines (see below).
+3. **Save in the report** as section `## H) Draft Application Answers`.
 
 ### Generic questions (use if they can't be extracted from the form)
 
