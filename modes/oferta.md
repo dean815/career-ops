@@ -284,6 +284,12 @@ Read `score_threshold` from `_profile.md` Airtable config (default: 3.0).
 - On new evaluation of a role with any other status (Applied, Interview, etc.) → preserve existing status
 - On explicit status change in career-ops → map using `airtable_value` from `templates/states.yml`
 
+**Date field rules:**
+- When setting status to "Applied" → also set `applied_date` to today's date (YYYY-MM-DD), but only if the field is currently empty
+- When setting status to any terminal state (Rejected, Expired, Declined, or Discarded mapped to Expired) → also set `rejected_date` to today's date (YYYY-MM-DD), but only if the field is currently empty
+- When creating a new record with status "Evaluated" → do not set either date field
+- Always preserve existing dates — never overwrite a date that is already set
+
 #### 3d. Error Handling
 
 If Airtable MCP is unavailable (tools not loaded, auth error, timeout):
