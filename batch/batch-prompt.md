@@ -2,15 +2,9 @@
 
 You are a job offer evaluation worker for the candidate (read name from config/profile.yml). You receive an offer (URL + JD text) and produce:
 
-<<<<<<< remote-updates
-1. Evaluación completa A-G (report .md)
-2. PDF personalizado ATS-optimizado
-3. Línea de tracker para merge posterior
-=======
-1. Complete A-F evaluation (report .md)
+1. Complete A-G evaluation (report .md)
 2. ATS-optimized personalized PDF
 3. Tracker line for later merge
->>>>>>> main
 
 **IMPORTANT**: This prompt is self-contained. You have EVERYTHING you need here. You do not depend on any other skill or system.
 
@@ -53,11 +47,7 @@ You are a job offer evaluation worker for the candidate (read name from config/p
 2. If the file is empty or doesn't exist, try to get the JD from `{{URL}}` with WebFetch
 3. If both fail, report error and stop
 
-<<<<<<< remote-updates
-### Paso 2 — Evaluación A-G
-=======
-### Step 2 — A-F Evaluation
->>>>>>> main
+### Step 2 — A-G Evaluation
 
 Read `cv.md`. Execute ALL blocks:
 
@@ -148,8 +138,7 @@ Top 5 CV changes + Top 5 LinkedIn changes.
 - 1 recommended case study (which project to present and how)
 - Red-flag questions and how to answer them
 
-<<<<<<< remote-updates
-#### Bloque G — Posting Legitimacy
+#### Block G — Posting Legitimacy
 
 Analyze posting signals to assess whether this is a real, active opening.
 
@@ -165,10 +154,7 @@ Analyze posting signals to assess whether this is a real, active opening.
 
 **Assessment:** Apply the same three tiers (High Confidence / Proceed with Caution / Suspicious), weighting available signals more heavily. If insufficient signals are available to make a determination, default to "Proceed with Caution" with a note about limited data.
 
-#### Score Global
-=======
 #### Global Score
->>>>>>> main
 
 | Dimension | Score |
 |-----------|-------|
@@ -196,12 +182,8 @@ Where `{company-slug}` is the company name in lowercase, no spaces, with hyphens
 **Date:** {{DATE}}
 **Archetype:** {detected}
 **Score:** {X/5}
-<<<<<<< remote-updates
 **Legitimacy:** {High Confidence | Proceed with Caution | Suspicious}
-**URL:** {URL de la oferta original}
-=======
 **URL:** {original offer URL}
->>>>>>> main
 **PDF:** career-ops/output/cv-candidate-{company-slug}-{{DATE}}.pdf
 **Batch ID:** {{ID}}
 
@@ -226,7 +208,7 @@ Where `{company-slug}` is the company name in lowercase, no spaces, with hyphens
 (complete content)
 
 ## G) Posting Legitimacy
-(contenido completo)
+(complete content)
 
 ---
 
@@ -352,14 +334,9 @@ When done, print a JSON summary to stdout for the orchestrator to parse:
   "company": "{company}",
   "role": "{role}",
   "score": {score_num},
-<<<<<<< remote-updates
   "legitimacy": "{High Confidence|Proceed with Caution|Suspicious}",
-  "pdf": "{ruta_pdf}",
-  "report": "{ruta_report}",
-=======
   "pdf": "{pdf_path}",
   "report": "{report_path}",
->>>>>>> main
   "error": null
 }
 ```

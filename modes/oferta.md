@@ -1,12 +1,6 @@
-<<<<<<< remote-updates
-# Modo: oferta — Evaluación Completa A-G
+# Mode: oferta — Complete A-G Evaluation
 
-Cuando el candidato pega una oferta (texto o URL), entregar SIEMPRE los 7 bloques (A-F evaluation + G legitimacy):
-=======
-# Mode: oferta — Complete A-F Evaluation
-
-When the candidate pastes an offer (text or URL), ALWAYS deliver all 6 blocks:
->>>>>>> main
+When the candidate pastes an offer (text or URL), ALWAYS deliver all 7 blocks (A-F evaluation + G legitimacy):
 
 ## Step 0 — Archetype Detection
 
@@ -109,7 +103,7 @@ Also include:
 - 1 recommended case study (which project to present and how)
 - Red-flag questions and how to answer them (e.g., "why did you sell your company?", "do you have direct reports?")
 
-## Bloque G — Posting Legitimacy
+## Block G — Posting Legitimacy
 
 Analyze the job posting for signals that indicate whether this is a real, active opening. This helps the user prioritize their effort on opportunities most likely to result in a hiring process.
 
@@ -117,7 +111,7 @@ Analyze the job posting for signals that indicate whether this is a real, active
 
 ### Signals to analyze (in order):
 
-**1. Posting Freshness** (from Playwright snapshot, already captured in Paso 0):
+**1. Posting Freshness** (from Playwright snapshot, already captured in Step 0):
 - Date posted or "X days ago" -- extract from page
 - Apply button state (active / closed / missing / redirects to generic page)
 - If URL redirected to generic careers page, note it
@@ -168,11 +162,7 @@ Analyze the job posting for signals that indicate whether this is a real, active
 
 ## Post-evaluation
 
-<<<<<<< remote-updates
-**SIEMPRE** después de generar los bloques A-G:
-=======
-**ALWAYS** after generating blocks A-F:
->>>>>>> main
+**ALWAYS** after generating blocks A-G:
 
 ### 1. Save report .md
 
@@ -190,12 +180,8 @@ Save the complete evaluation in `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 **Date:** {YYYY-MM-DD}
 **Archetype:** {detected}
 **Score:** {X/5}
-<<<<<<< remote-updates
 **Legitimacy:** {High Confidence | Proceed with Caution | Suspicious}
-**PDF:** {ruta o pendiente}
-=======
 **PDF:** {path or pending}
->>>>>>> main
 
 ---
 
@@ -217,16 +203,11 @@ Save the complete evaluation in `reports/{###}-{company-slug}-{YYYY-MM-DD}.md`.
 ## F) Interview Plan
 (complete block F content)
 
-<<<<<<< remote-updates
 ## G) Posting Legitimacy
-(contenido completo del bloque G)
+(complete Block G content)
 
 ## H) Draft Application Answers
-(solo si score >= 4.5 — borradores de respuestas para el formulario de aplicación)
-=======
-## G) Draft Application Answers
 (only if score >= 4.5 — draft answers for the application form)
->>>>>>> main
 
 ---
 

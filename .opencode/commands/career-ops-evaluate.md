@@ -1,5 +1,5 @@
 ---
-description: Evaluate job offer (A-F scoring, no auto PDF)
+description: Evaluate job offer (A-G scoring, no auto PDF)
 ---
 
 Evaluate the following job description using career-ops oferta mode:

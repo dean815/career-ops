@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$TOOL_INPUT\" | grep -qE '^git pull'; then repo_root=$(git rev-parse --show-toplevel 2>/dev/null); result=$(node \"$repo_root/detect-spanish.mjs\" 2>/tmp/detect-spanish-err.log); if [ $? -ne 0 ] && [ -n \"$result\" ]; then files=$(echo \"$result\" | node -e \"const d=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')); console.log(d.files_with_spanish.join(', '))\"); count=$(echo \"$result\" | node -e \"const d=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')); console.log(d.total_findings)\"); echo \"Spanish detected in pulled changes ($count findings across: $files). Say 'translate the Spanish' to switch to feature/translate-spanish-to-english, merge main, and translate.\"; fi; fi",
+            "timeout": 15000
+          }
+        ]
+      }
+    ]
+  }
+}

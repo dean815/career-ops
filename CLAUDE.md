@@ -41,6 +41,27 @@ Parse the JSON output:
 The user can also say "check for updates" or "update career-ops" at any time to force a check.
 To rollback: `node update-system.mjs rollback`
 
+## Spanish Translation Workflow
+
+The upstream author writes new features in Spanish. A PostToolUse hook in `.claude/settings.json` runs `detect-spanish.mjs` after every `git pull`. If Spanish is detected, the user is alerted.
+
+When the user says "translate the Spanish" (or similar), follow this workflow:
+
+1. **Switch branch:** `git checkout feature/translate-spanish-to-english`
+2. **Merge main:** `git merge main` to bring in the new upstream changes
+3. **Resolve any merge conflicts** favoring English, but preserving all new functionality from the Spanish side
+4. **Translate** Spanish content to English in the flagged files. Preserve:
+   - All new functionality and instructions the author introduced
+   - The user's existing customizations
+   - Programmatic identifiers and variable names (e.g., status mappings in `.mjs`)
+   - File names (`oferta.md`, `contacto.md`) and directory names
+   - Localization files (`modes/de/`, `modes/fr/`, `modes/ja/`, `modes/ru/`, `modes/pt/`)
+5. **Verify** with `node detect-spanish.mjs --all` — should report `clean`
+6. **Commit** the translation changes on this branch
+7. The user decides when to PR/merge back to main
+
+**Detection script:** `node detect-spanish.mjs [--all | --diff A..B]` outputs JSON with files and findings. Exit code 0 = clean, 1 = Spanish detected.
+
 ## What is career-ops
 
 AI-powered job search automation built on Claude Code: pipeline tracking, offer evaluation, CV generation, portal scanning, batch processing.
@@ -74,7 +95,7 @@ When using [OpenCode](https://opencode.ai), the following slash commands are ava
 |---------|------------------------|-------------|
 | `/career-ops` | `/career-ops` | Show menu or evaluate JD with args |
 | `/career-ops-pipeline` | `/career-ops pipeline` | Process pending URLs from inbox |
-| `/career-ops-evaluate` | `/career-ops oferta` | Evaluate job offer (A-F scoring) |
+| `/career-ops-evaluate` | `/career-ops oferta` | Evaluate job offer (A-G scoring) |
 | `/career-ops-compare` | `/career-ops ofertas` | Compare and rank multiple offers |
 | `/career-ops-contact` | `/career-ops contacto` | LinkedIn outreach (find contacts + draft) |
 | `/career-ops-deep` | `/career-ops deep` | Deep company research |
